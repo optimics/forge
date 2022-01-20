@@ -22,8 +22,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
       - name: Install dependencies
-        run: |
-          npm ci
-          npx npm0install-peer-dependencies
+        run: npm ci
       - name: Run tests
         run: npm test
