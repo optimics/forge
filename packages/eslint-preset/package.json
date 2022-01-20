@@ -1,0 +1,24 @@
+{
+  "name": "@optimics/eslint-config",
+  "version": "0.1.0",
+  "author": "Pavel Žák <pavel.zak@optimics.cz>",
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "test": "eslint index.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.16.10"
+  },
+  "peerDependencies": {
+    "@babel/eslint-parser": "^7.16.5",
+    "@babel/preset-env": "^7.16.11",
+    "eslint": "^8.7.0"
+  }
+}
