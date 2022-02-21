@@ -43,6 +43,7 @@ module.exports = {
     'no-unneeded-ternary': ['error'],
     'no-unreachable-loop': ['error'],
     'no-unused-private-class-members': ['error'],
+    'no-unused-vars': ['error', { ignoreRestSiblings: true }],
     'no-useless-computed-key': ['error'],
     'no-useless-concat': ['error'],
     'no-useless-constructor': ['error'],
