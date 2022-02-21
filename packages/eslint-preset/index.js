@@ -56,7 +56,6 @@ module.exports = {
     'prefer-rest-params': ['error'],
     'prefer-spread': ['error'],
     'radix': ['error'],
-    'require-atomic-updates': ['error'],
     'require-await': ['error'],
     'require-yield': ['error'],
     'rest-spread-spacing': ['error', 'never'],
