@@ -48,6 +48,7 @@ module.exports = {
     'no-useless-return': ['error'],
     'no-var': ['error'],
     'no-whitespace-before-property': ['error'],
+    'object-curly-spacing': ['error', 'always'],
     'object-shorthand': ['error', 'always'],
     'one-var-declaration-per-line': ['error'],
     'quotes': ['error', 'single'],
