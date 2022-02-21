@@ -31,6 +31,7 @@ module.exports = {
     'no-extra-parens': ['error'],
     'no-implicit-coercion': ['error'],
     'no-multi-spaces': ['error'],
+    'no-self-compare': ['error'],
     'no-tabs': ['error'],
     'no-throw-literal': ['error'],
     'no-trailing-spaces': ['error'],
