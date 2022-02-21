@@ -24,6 +24,7 @@ module.exports = {
     'jsx-quotes': ['error', 'prefer-double'],
     'linebreak-style': ['error', 'unix'],
     'max-depth': ['error', 5],
+    'max-len': ['error', { code: 100, tabWidth: 2 }],
     'max-lines': ['error', 500],
     'max-lines-per-function': ['error', 200],
     'max-statements': ['error', 20],
