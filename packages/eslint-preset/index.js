@@ -61,5 +61,6 @@ module.exports = {
     'require-yield': ['error'],
     'rest-spread-spacing': ['error', 'never'],
     'semi': ['error', 'never'],
+    'yoda': ['error', 'never'],
   },
 }
