@@ -4,6 +4,7 @@ module.exports = {
   rules: {
     'array-callback-return': ['error'],
     'arrow-body-style': ['error', 'as-needed'],
+    'arrow-parens': ['error', 'as-needed'],
     'camelcase': ['error', {
       allow: ['[a-zA-Z0-9]+__[a-zA-Z0-9]+'],
       properties: 'always',
