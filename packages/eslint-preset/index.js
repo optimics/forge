@@ -26,6 +26,7 @@ module.exports = {
     'max-lines': ['error', 500],
     'max-lines-per-function': ['error', 200],
     'max-statements': ['error', 10],
+    'no-constructor-return': ['error'],
     'no-duplicate-imports': ['error'],
     'no-extra-parens': ['error'],
     'no-implicit-coercion': ['error'],
