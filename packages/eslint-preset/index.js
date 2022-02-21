@@ -29,7 +29,9 @@ module.exports = {
     'max-len': ['error', { code: 100, ignoreUrls: true, tabWidth: 2 }],
     'max-lines': ['error', 500],
     'max-lines-per-function': ['error', 200],
-    'max-statements': ['error', 20],
+    'max-statements': ['error', 20, {
+      ignoreTopLevelFunctions: true,
+    }],
     'no-constructor-return': ['error'],
     'no-duplicate-imports': ['error'],
     'no-extra-parens': ['error'],
