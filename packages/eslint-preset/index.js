@@ -21,6 +21,7 @@ module.exports = {
     'consistent-return': ['error'],
     'curly': ['error', 'all'],
     'eqeqeq': ['error', 'always'],
+    'jsx-quotes': ['error', 'prefer-double'],
     'linebreak-style': ['error', 'unix'],
     'max-depth': ['error', 5],
     'max-lines': ['error', 500],
