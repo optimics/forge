@@ -39,6 +39,7 @@ module.exports = {
     'no-underscore-dangle': ['error'],
     'no-unneeded-ternary': ['error'],
     'no-unreachable-loop': ['error'],
+    'no-unused-private-class-members': ['error'],
     'no-useless-computed-key': ['error'],
     'no-useless-concat': ['error'],
     'no-useless-constructor': ['error'],
