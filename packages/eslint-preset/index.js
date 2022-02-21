@@ -2,6 +2,7 @@ module.exports = {
   extends: ['eslint:recommended'],
   parser: '@babel/eslint-parser',
   rules: {
+    'array-callback-return': ['error'],
     'arrow-body-style': ['error', 'as-needed'],
     'camelcase': ['error', {
       properties: 'always',
