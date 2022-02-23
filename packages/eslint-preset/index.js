@@ -25,6 +25,7 @@ module.exports = {
     'complexity': ['error', 25],
     'consistent-return': ['error'],
     'curly': ['error', 'all'],
+    'dot-notation': ['error'],
     'eqeqeq': ['error', 'always'],
     'func-call-spacing': ['error'],
     'function-call-argument-newline': ['error', 'consistent'],
