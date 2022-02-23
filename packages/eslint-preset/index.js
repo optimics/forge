@@ -54,6 +54,7 @@ module.exports = {
     'no-confusing-arrow': ['error'],
     'no-constructor-return': ['error'],
     'no-duplicate-imports': ['error'],
+    'no-else-return': ['error'],
     'no-extra-parens': ['error'],
     'no-implicit-coercion': ['error'],
     'no-multi-spaces': ['error'],
