@@ -97,6 +97,7 @@ module.exports = {
     'object-curly-spacing': ['error', 'always'],
     'object-shorthand': ['error', 'always'],
     'one-var-declaration-per-line': ['error'],
+    'padded-blocks': ['error', 'never'],
     'prefer-const': ['error'],
     'prefer-promise-reject-errors': ['error', { allowEmptyReject: true }],
     'prefer-rest-params': ['error'],
