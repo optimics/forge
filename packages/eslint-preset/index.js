@@ -29,6 +29,7 @@ module.exports = {
       objects: 'always-multiline',
     }],
     'comma-spacing': ['error'],
+    'comma-style': ['error'],
     'complexity': ['error', COMPLEXITY_MAX],
     'consistent-return': ['error'],
     'curly': ['error', 'all'],
