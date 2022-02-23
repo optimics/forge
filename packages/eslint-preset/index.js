@@ -45,6 +45,9 @@ module.exports = {
       ignoreTopLevelFunctions: true,
     }],
     'operator-linebreak': ['error', 'after'],
+    'newline-per-chained-call': ['error', {
+      ignoreChainWithDepth: 3,
+    }],
     'no-constructor-return': ['error'],
     'no-duplicate-imports': ['error'],
     'no-extra-parens': ['error'],
