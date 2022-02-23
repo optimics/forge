@@ -27,6 +27,7 @@ module.exports = {
       SwitchCase: 1,
     }],
     'jsx-quotes': ['error', 'prefer-double'],
+    'keyword-spacing': ['error'],
     'linebreak-style': ['error', 'unix'],
     'max-depth': ['error', 5],
     'max-len': ['error', { code: 100, ignoreUrls: true, tabWidth: 2 }],
