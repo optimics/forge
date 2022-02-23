@@ -58,6 +58,7 @@ module.exports = {
     'no-extra-parens': ['error'],
     'no-implicit-coercion': ['error'],
     'no-lone-blocks': ['error'],
+    'no-lonely-if': ['error'],
     'no-multi-spaces': ['error'],
     'no-self-compare': ['error'],
     'no-tabs': ['error'],
