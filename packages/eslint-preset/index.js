@@ -77,6 +77,7 @@ module.exports = {
     'no-unreachable-loop': ['error'],
     'no-unused-private-class-members': ['error'],
     'no-unused-vars': ['error', { ignoreRestSiblings: true }],
+    'no-useless-catch': ['error'],
     'no-useless-computed-key': ['error'],
     'no-useless-concat': ['error'],
     'no-useless-constructor': ['error'],
