@@ -94,6 +94,7 @@ module.exports = {
     'no-useless-return': ['error'],
     'no-var': ['error'],
     'no-whitespace-before-property': ['error'],
+    'object-property-newline': ['error', { allowMultiplePropertiesPerLine: true }],
     'object-curly-spacing': ['error', 'always'],
     'object-shorthand': ['error', 'always'],
     'one-var-declaration-per-line': ['error'],
