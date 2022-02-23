@@ -33,6 +33,7 @@ module.exports = {
     'max-statements': ['error', 20, {
       ignoreTopLevelFunctions: true,
     }],
+    'operator-linebreak': ['error', 'after'],
     'no-constructor-return': ['error'],
     'no-duplicate-imports': ['error'],
     'no-extra-parens': ['error'],
