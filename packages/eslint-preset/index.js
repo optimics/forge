@@ -73,6 +73,7 @@ module.exports = {
     'semi': ['error', 'never'],
     'space-infix-ops': ['error'],
     'space-unary-ops': ['error', { words: true }],
+    'switch-colon-spacing': ['error'],
     'yoda': ['error', 'never'],
   },
 }
