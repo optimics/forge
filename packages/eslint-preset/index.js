@@ -15,7 +15,7 @@ module.exports = {
     'block-spacing': ['error', 'always'],
     'brace-style': ['error'],
     'camelcase': ['error', {
-      allow: ['[a-zA-Z0-9]+__[a-zA-Z0-9]+'],
+      allow: ['UNSAFE_', '[a-zA-Z0-9]+__[a-zA-Z0-9]+'],
       properties: 'always',
       ignoreDestructuring: true,
       ignoreGlobals: true,
