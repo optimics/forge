@@ -8,6 +8,11 @@ const STATEMENTS_MAX = 20
 module.exports = {
   extends: ['eslint:recommended'],
   parser: '@babel/eslint-parser',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
   rules: {
     'array-callback-return': ['error'],
     'arrow-body-style': ['error', 'as-needed'],
@@ -49,6 +54,7 @@ module.exports = {
     'keyword-spacing': ['error'],
     'key-spacing': ['error'],
     'linebreak-style': ['error', 'unix'],
+    'lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
     'max-depth': ['error', DEPTH_MAX],
     'max-len': ['error', { code: 100, ignoreUrls: true, tabWidth: 2 }],
     'max-lines': ['error', LINES_MAX],
@@ -56,12 +62,14 @@ module.exports = {
     'max-statements': ['error', STATEMENTS_MAX, {
       ignoreTopLevelFunctions: true,
     }],
+    'multiline-ternary': ['error', 'always-multiline'],
     'operator-linebreak': ['error', 'after'],
     'new-cap': ['error'],
     'newline-per-chained-call': ['error', {
       ignoreChainWithDepth: 3,
     }],
     'no-caller': ['error'],
+    'no-compare-neg-zero': ['error'],
     'no-confusing-arrow': ['error'],
     'no-constructor-return': ['error'],
     'no-duplicate-imports': ['error'],
@@ -99,11 +107,12 @@ module.exports = {
     'no-useless-return': ['error'],
     'no-var': ['error'],
     'no-whitespace-before-property': ['error'],
-    'object-property-newline': ['error', { allowMultiplePropertiesPerLine: true }],
+    'object-curly-newline': ['error', { multiline: true, consistent: true }],
     'object-curly-spacing': ['error', 'always'],
+    'object-property-newline': ['error', { allowMultiplePropertiesPerLine: true }],
     'object-shorthand': ['error', 'always'],
     'one-var-declaration-per-line': ['error'],
-    'padded-blocks': ['error', 'never'],
+    'padded-blocks': ['error', { blocks: 'never', switches: 'never', classes: 'never' }],
     'prefer-const': ['error'],
     'prefer-promise-reject-errors': ['error', { allowEmptyReject: true }],
     'prefer-rest-params': ['error'],
@@ -120,6 +129,7 @@ module.exports = {
     'space-infix-ops': ['error'],
     'space-unary-ops': ['error', { words: true }],
     'switch-colon-spacing': ['error'],
+    'unicode-bom': ['error', 'never'],
     'yoda': ['error', 'never'],
   },
 }
