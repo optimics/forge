@@ -71,6 +71,7 @@ module.exports = {
     'require-yield': ['error'],
     'rest-spread-spacing': ['error', 'never'],
     'semi': ['error', 'never'],
+    'space-before-blocks': ['error', 'always'],
     'space-infix-ops': ['error'],
     'space-unary-ops': ['error', { words: true }],
     'switch-colon-spacing': ['error'],
