@@ -51,6 +51,7 @@ module.exports = {
       ignoreChainWithDepth: 3,
     }],
     'no-caller': ['error'],
+    'no-confusing-arrow': ['error'],
     'no-constructor-return': ['error'],
     'no-duplicate-imports': ['error'],
     'no-extra-parens': ['error'],
