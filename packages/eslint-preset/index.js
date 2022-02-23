@@ -60,6 +60,7 @@ module.exports = {
     'no-lone-blocks': ['error'],
     'no-lonely-if': ['error'],
     'no-loop-func': ['error'],
+    'no-magic-numbers': ['error'],
     'no-multi-spaces': ['error'],
     'no-self-compare': ['error'],
     'no-tabs': ['error'],
