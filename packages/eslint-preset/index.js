@@ -23,7 +23,9 @@ module.exports = {
     'consistent-return': ['error'],
     'curly': ['error', 'all'],
     'eqeqeq': ['error', 'always'],
-    'indent': ['error', 2],
+    'indent': ['error', 2, {
+      SwitchCase: 1,
+    }],
     'jsx-quotes': ['error', 'prefer-double'],
     'linebreak-style': ['error', 'unix'],
     'max-depth': ['error', 5],
