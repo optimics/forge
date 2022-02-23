@@ -80,6 +80,7 @@ module.exports = {
     'rest-spread-spacing': ['error', 'never'],
     'semi': ['error', 'never'],
     'space-before-blocks': ['error', 'always'],
+    'space-in-parens': ['error'],
     'space-infix-ops': ['error'],
     'space-unary-ops': ['error', { words: true }],
     'switch-colon-spacing': ['error'],
