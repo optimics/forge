@@ -70,6 +70,7 @@ module.exports = {
     'rest-spread-spacing': ['error', 'never'],
     'semi': ['error', 'never'],
     'space-infix-ops': ['error'],
+    'space-unary-ops': ['error', { words: true }],
     'yoda': ['error', 'never'],
   },
 }
