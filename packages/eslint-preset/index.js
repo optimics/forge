@@ -50,6 +50,7 @@ module.exports = {
     'newline-per-chained-call': ['error', {
       ignoreChainWithDepth: 3,
     }],
+    'no-caller': ['error'],
     'no-constructor-return': ['error'],
     'no-duplicate-imports': ['error'],
     'no-extra-parens': ['error'],
