@@ -25,6 +25,7 @@ module.exports = {
     'consistent-return': ['error'],
     'curly': ['error', 'all'],
     'eqeqeq': ['error', 'always'],
+    'func-call-spacing': ['error'],
     'indent': ['error', 2, {
       SwitchCase: 1,
     }],
