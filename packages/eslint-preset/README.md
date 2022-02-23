@@ -3,7 +3,7 @@
 ## Installation
 
 ```shell
-npm install --save-dev eslint @optimics/eslint-config @babel/preset-env @babel/eslint-parser
+npm install --save-dev @optimics/eslint-config @babel/preset-env @babel/eslint-parser
 ```
 
 ## Manual configuration
