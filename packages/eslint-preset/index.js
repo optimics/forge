@@ -28,6 +28,7 @@ module.exports = {
     'eqeqeq': ['error', 'always'],
     'func-call-spacing': ['error'],
     'function-call-argument-newline': ['error', 'consistent'],
+    'function-paren-newline': ['error'],
     'indent': ['error', 2, {
       SwitchCase: 1,
     }],
