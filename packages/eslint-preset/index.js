@@ -76,6 +76,7 @@ module.exports = {
     'no-magic-numbers': ['error'],
     'no-mixed-operators': ['error'],
     'no-multi-spaces': ['error'],
+    'no-multiple-empty-lines': ['error'],
     'no-param-reassign': ['error'],
     'no-return-assign': ['error'],
     'no-self-compare': ['error'],
