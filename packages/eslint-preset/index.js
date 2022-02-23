@@ -33,6 +33,7 @@ module.exports = {
     'complexity': ['error', COMPLEXITY_MAX],
     'consistent-return': ['error'],
     'curly': ['error', 'all'],
+    'dot-location': ['error', 'property'],
     'dot-notation': ['error'],
     'eqeqeq': ['error', 'always'],
     'func-call-spacing': ['error'],
