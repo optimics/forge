@@ -62,7 +62,9 @@ module.exports = {
     'no-constructor-return': ['error'],
     'no-duplicate-imports': ['error'],
     'no-else-return': ['error'],
-    'no-extra-parens': ['error'],
+    'no-extra-parens': ['error', 'all', {
+      enforceForArrowConditionals: false,
+    }],
     'no-implicit-coercion': ['error'],
     'no-lone-blocks': ['error'],
     'no-lonely-if': ['error'],
