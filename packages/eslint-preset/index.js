@@ -11,6 +11,7 @@ module.exports = {
   rules: {
     'array-callback-return': ['error'],
     'arrow-body-style': ['error', 'as-needed'],
+    'array-element-newline': ['error', 'consistent'],
     'arrow-parens': ['error', 'as-needed'],
     'block-spacing': ['error', 'always'],
     'brace-style': ['error'],
