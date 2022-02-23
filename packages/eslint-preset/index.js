@@ -27,6 +27,7 @@ module.exports = {
     'curly': ['error', 'all'],
     'eqeqeq': ['error', 'always'],
     'func-call-spacing': ['error'],
+    'function-call-argument-newline': ['error', 'consistent'],
     'indent': ['error', 2, {
       SwitchCase: 1,
     }],
