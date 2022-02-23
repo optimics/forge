@@ -5,6 +5,7 @@ module.exports = {
     'array-callback-return': ['error'],
     'arrow-body-style': ['error', 'as-needed'],
     'arrow-parens': ['error', 'as-needed'],
+    'block-spacing': ['error', 'always'],
     'camelcase': ['error', {
       allow: ['[a-zA-Z0-9]+__[a-zA-Z0-9]+'],
       properties: 'always',
