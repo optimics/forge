@@ -30,6 +30,7 @@ module.exports = {
     'func-call-spacing': ['error'],
     'function-call-argument-newline': ['error', 'consistent'],
     'function-paren-newline': ['error'],
+    'guard-for-in': ['error'],
     'indent': ['error', 2, {
       SwitchCase: 1,
     }],
