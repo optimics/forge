@@ -1,3 +1,10 @@
+const COMPLEXITY_MAX = 25
+const DEPTH_MAX = 5
+const FUNCTION_LINES_MAX = 200
+const INDENT_DEFAULT = 2
+const LINES_MAX = 500
+const STATEMENTS_MAX = 20
+
 module.exports = {
   extends: ['eslint:recommended'],
   parser: '@babel/eslint-parser',
@@ -22,7 +29,7 @@ module.exports = {
       objects: 'always-multiline',
     }],
     'comma-spacing': ['error'],
-    'complexity': ['error', 25],
+    'complexity': ['error', COMPLEXITY_MAX],
     'consistent-return': ['error'],
     'curly': ['error', 'all'],
     'dot-notation': ['error'],
@@ -31,18 +38,18 @@ module.exports = {
     'function-call-argument-newline': ['error', 'consistent'],
     'function-paren-newline': ['error'],
     'guard-for-in': ['error'],
-    'indent': ['error', 2, {
+    'indent': ['error', INDENT_DEFAULT, {
       SwitchCase: 1,
     }],
     'jsx-quotes': ['error', 'prefer-double'],
     'keyword-spacing': ['error'],
     'key-spacing': ['error'],
     'linebreak-style': ['error', 'unix'],
-    'max-depth': ['error', 5],
+    'max-depth': ['error', DEPTH_MAX],
     'max-len': ['error', { code: 100, ignoreUrls: true, tabWidth: 2 }],
-    'max-lines': ['error', 500],
-    'max-lines-per-function': ['error', 200],
-    'max-statements': ['error', 20, {
+    'max-lines': ['error', LINES_MAX],
+    'max-lines-per-function': ['error', FUNCTION_LINES_MAX],
+    'max-statements': ['error', STATEMENTS_MAX, {
       ignoreTopLevelFunctions: true,
     }],
     'operator-linebreak': ['error', 'after'],
