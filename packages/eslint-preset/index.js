@@ -110,6 +110,7 @@ module.exports = {
       'error',
       {
         ignoreArrayIndexes: true,
+        ignoreDefaultValues: true,
       },
     ],
     'no-mixed-operators': ['error'],
