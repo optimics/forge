@@ -82,7 +82,7 @@ module.exports = {
     ],
     'multiline-ternary': ['error', 'always-multiline'],
     'operator-linebreak': ['error', 'after'],
-    'new-cap': ['error'],
+    'new-cap': ['error', { properties: false }],
     'newline-per-chained-call': [
       'error',
       {
