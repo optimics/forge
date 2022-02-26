@@ -81,7 +81,7 @@ module.exports = {
       },
     ],
     'multiline-ternary': ['error', 'always-multiline'],
-    'operator-linebreak': ['error', 'after'],
+    'operator-linebreak': ['error'],
     'new-cap': ['error', { properties: false }],
     'newline-per-chained-call': [
       'error',
@@ -91,7 +91,6 @@ module.exports = {
     ],
     'no-caller': ['error'],
     'no-compare-neg-zero': ['error'],
-    'no-confusing-arrow': ['error'],
     'no-constructor-return': ['error'],
     'no-duplicate-imports': ['error'],
     'no-else-return': ['error'],
@@ -100,6 +99,7 @@ module.exports = {
       'all',
       {
         enforceForArrowConditionals: false,
+        nestedBinaryExpressions: false,
       },
     ],
     'no-implicit-coercion': ['error'],
@@ -114,7 +114,6 @@ module.exports = {
         ignoreDefaultValues: true,
       },
     ],
-    'no-mixed-operators': ['error'],
     'no-multi-spaces': ['error'],
     'no-multiple-empty-lines': ['error'],
     'no-param-reassign': ['error'],
