@@ -50,16 +50,8 @@ module.exports = {
     eqeqeq: ['error', 'always'],
     'func-call-spacing': ['error'],
     'function-call-argument-newline': ['error', 'consistent'],
-    'function-paren-newline': ['error', 'multiline'],
     'generator-star-spacing': ['error', { before: true, after: true }],
     'guard-for-in': ['error'],
-    indent: [
-      'error',
-      INDENT_DEFAULT,
-      {
-        SwitchCase: 1,
-      },
-    ],
     'jsx-quotes': ['error', 'prefer-double'],
     'keyword-spacing': ['error'],
     'key-spacing': ['error'],
@@ -70,7 +62,17 @@ module.exports = {
       { exceptAfterSingleLine: true },
     ],
     'max-depth': ['error', DEPTH_MAX],
-    'max-len': ['error', { code: 100, ignoreUrls: true, tabWidth: 2 }],
+    'max-len': [
+      'error',
+      {
+        code: 100,
+        ignoreRegExpLiterals: true,
+        ignoreStrings: true,
+        ignoreTemplateLiterals: true,
+        ignoreUrls: true,
+        tabWidth: 2,
+      },
+    ],
     'max-lines': ['error', LINES_MAX],
     'max-lines-per-function': ['error', FUNCTION_LINES_MAX],
     'max-statements': [
@@ -94,14 +96,6 @@ module.exports = {
     'no-constructor-return': ['error'],
     'no-duplicate-imports': ['error'],
     'no-else-return': ['error'],
-    'no-extra-parens': [
-      'error',
-      'all',
-      {
-        enforceForArrowConditionals: false,
-        nestedBinaryExpressions: false,
-      },
-    ],
     'no-implicit-coercion': ['error'],
     'no-lone-blocks': ['error'],
     'no-lonely-if': ['error'],
@@ -163,7 +157,7 @@ module.exports = {
         usePrettierrc: false,
       },
     ],
-    quotes: ['error', 'single'],
+    quotes: ['error', 'single', { avoidEscape: true }],
     radix: ['error'],
     'require-await': ['error'],
     'require-yield': ['error'],
@@ -177,4 +171,21 @@ module.exports = {
     'unicode-bom': ['error', 'never'],
     yoda: ['error', 'never'],
   },
+  overrides: [
+    {
+      files: [
+        '**/__tests__/*.js',
+        '**/__tests__/*.jsx',
+        '**/__tests__/*.cjs',
+        '**/__tests__/*.mjs',
+      ],
+      rules: {
+        'max-len': 0,
+        'max-lines-per-function': 0,
+        'max-lines': 0,
+        'max-statements': 0,
+        'no-magic-numbers': 0,
+      },
+    },
+  ],
 }
