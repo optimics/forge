@@ -80,3 +80,17 @@ endfunction
 
 autocmd FileType javascript call OhMyGlobItIsJavascript()
 ```
+
+### vscode
+
+Install the [ESlint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+and add this into our `settings.json` file:
+
+```
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
+```
