@@ -1,13 +1,18 @@
 const COMPLEXITY_MAX = 25
 const DEPTH_MAX = 5
 const FUNCTION_LINES_MAX = 200
-const INDENT_DEFAULT = 2
 const LINES_MAX = 500
 const STATEMENTS_MAX = 20
 
 module.exports = {
   plugins: ['prettier'],
-  extends: ['eslint:recommended', 'plugin:prettier/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:import/recommended',
+    'plugin:import/errors',
+    'plugin:react/recommended',
+    'plugin:prettier/recommended',
+  ],
   parser: '@babel/eslint-parser',
   parserOptions: {
     ecmaFeatures: {
