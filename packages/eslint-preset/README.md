@@ -52,8 +52,8 @@ future.
 
 ### vim
 
-Assuming, you have dense-analysis/ale installed, you only need to turn on
-eslint as your linter and fixer.
+Assuming, you have [dense-analysis/ale](https://github.com/dense-analysis/ale)
+installed, you only need to turn on eslint as your linter and fixer.
 
 ```
 let g:ale_fix_on_save = 1
