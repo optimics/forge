@@ -81,6 +81,25 @@ endfunction
 autocmd FileType javascript call OhMyGlobItIsJavascript()
 ```
 
+### Atom
+
+Install the [linter-eslint-node](https://github.com/AtomLinter/linter-eslint-node)
+extension.
+
+```shell
+apm install https://github.com/AtomLinter/linter-eslint-node
+```
+
+Unfortunately, the good old [`linter-eslint` cannot handle eslint-8](https://github.com/AtomLinter/linter-eslint/issues/1440), so this is a quick fix.
+
+Don't forget to turn on fix on save by adding this into your `config.cson` file.
+
+```
+  "linter-eslint-node":
+    autofix:
+      fixOnSave: true
+```
+
 ### vscode
 
 Install the [ESlint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
