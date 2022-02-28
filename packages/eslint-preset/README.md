@@ -6,7 +6,7 @@
 npm install --save-dev @optimics/eslint-config @babel/preset-env @babel/eslint-parser
 ```
 
-## Configuration
+## Project configuration
 
 Add `@babel/preset-env` to your `.babelrc.json` in the root of your project if
 you don't already have it.
