@@ -87,7 +87,6 @@ module.exports = {
         ignoreTopLevelFunctions: true,
       },
     ],
-    'multiline-ternary': ['error', 'always-multiline'],
     'operator-linebreak': ['error'],
     'new-cap': ['error', { properties: false }],
     'newline-per-chained-call': [
