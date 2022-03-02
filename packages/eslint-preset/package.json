@@ -3,6 +3,21 @@
   "version": "0.4.0",
   "author": "Pavel Žák <pavel.zak@optimics.cz>",
   "license": "MIT",
+  "keywords": [
+    "codingstyle",
+    "config",
+    "eslint",
+    "eslintconfig",
+    "es2015",
+    "es2016",
+    "es2017",
+    "es2018",
+    "es2019",
+    "es2020",
+    "javascript",
+    "linter",
+    "styleguide"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/optimics/eslint-config/"
