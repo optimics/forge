@@ -175,6 +175,11 @@ module.exports = {
     'unicode-bom': ['error', 'never'],
     yoda: ['error', 'never'],
   },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   overrides: [
     {
       files: [
