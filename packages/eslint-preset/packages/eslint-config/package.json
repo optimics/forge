@@ -1,6 +1,6 @@
 {
   "name": "@optimics/eslint-config",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "ESLint configuration for Optimics devs",
   "author": "Pavel Žák <pavel.zak@optimics.cz>",
   "license": "MIT",
