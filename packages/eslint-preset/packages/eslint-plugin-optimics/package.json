@@ -19,5 +19,8 @@
   },
   "bugs": {
     "url": "https://github.com/optimics/eslint-config/issues"
+  },
+  "scripts": {
+    "test": "eslint *.js **/*.js"
   }
 }
