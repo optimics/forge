@@ -27,6 +27,6 @@ jobs:
       - name: Install dependencies
         run: npm test
       - name: Publish packages
-        run: lerna publish
+        run: lerna publish from-git
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_KEY }}
