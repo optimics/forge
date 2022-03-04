@@ -1,49 +1,12 @@
 {
-  "name": "@optimics/eslint-config",
-  "version": "0.4.1",
-  "author": "Pavel Žák <pavel.zak@optimics.cz>",
-  "license": "MIT",
-  "keywords": [
-    "codingstyle",
-    "config",
-    "eslint",
-    "eslintconfig",
-    "es2015",
-    "es2016",
-    "es2017",
-    "es2018",
-    "es2019",
-    "es2020",
-    "javascript",
-    "linter",
-    "styleguide"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/optimics/eslint-config/"
-  },
-  "files": [
-    "index.js"
-  ],
-  "engines": {
-    "node": ">=16"
-  },
-  "scripts": {
-    "test": "eslint index.js"
+  "name": "@optimics/eslint-root",
+  "private": true,
+  "dependencies": {
+    "@optimics/eslint-config": "file:packages/eslint-config",
+    "eslint-plugin-optimics": "file:packages/eslint-plugin-optimics"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.10"
-  },
-  "dependencies": {
-    "eslint": "^8.10",
-    "eslint-config-prettier": "^8.4.0",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.29.2",
-    "prettier": "^2.5.1"
-  },
-  "peerDependencies": {
-    "@babel/eslint-parser": "^7.16.5",
-    "@babel/preset-env": "^7.16.11"
+    "@babel/core": "^7.16.10",
+    "lerna": "^4.0.0"
   }
 }

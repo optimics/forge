@@ -1,0 +1,23 @@
+{
+  "name": "eslint-plugin-optimics",
+  "version": "0.4.1",
+  "description": "Additional Optimics rules",
+  "author": "Pavel Žák <pavel.zak@optimics.cz>",
+  "homepage": "https://github.com/optimics/eslint-config#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "*.js",
+    "rules/*.js"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/optimics/eslint-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/optimics/eslint-config/issues"
+  }
+}

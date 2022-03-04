@@ -5,7 +5,7 @@ const LINES_MAX = 500
 const STATEMENTS_MAX = 20
 
 module.exports = {
-  plugins: ['prettier'],
+  plugins: ['prettier', 'optimics'],
   extends: [
     'eslint:recommended',
     'plugin:import/recommended',
@@ -100,6 +100,7 @@ module.exports = {
     'no-constructor-return': ['error'],
     'no-duplicate-imports': ['error'],
     'no-else-return': ['error'],
+    'no-extra-boolean-cast': ['error'],
     'no-implicit-coercion': ['error'],
     'no-lone-blocks': ['error'],
     'no-lonely-if': ['error'],
@@ -115,6 +116,7 @@ module.exports = {
     'no-multi-spaces': ['error'],
     'no-multiple-empty-lines': ['error'],
     'no-param-reassign': ['error'],
+    'optimics/boolean-shortcuts': ['error'],
     'no-return-assign': ['error'],
     'no-self-compare': ['error'],
     'no-sequences': ['error'],
