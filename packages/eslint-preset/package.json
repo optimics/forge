@@ -6,10 +6,13 @@
     "eslint-plugin-optimics": "file:packages/eslint-plugin-optimics"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.10",
-    "lerna": "^4.0.0"
+    "@babel/core": "^7.20.5",
+    "lerna": "^6.1.0"
   },
   "scripts": {
     "test": "lerna run test --parallel --stream"
-  }
+  },
+  "workspaces": [
+    "packages/**"
+  ]
 }

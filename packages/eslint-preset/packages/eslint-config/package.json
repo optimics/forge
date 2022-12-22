@@ -36,13 +36,13 @@
     "test": "eslint index.js"
   },
   "dependencies": {
-    "eslint": "^8.10",
+    "eslint": "^8.30",
     "eslint-config-prettier": "^8.4.0",
-    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-optimics": "file:../eslint-plugin-optimics",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.29.2",
-    "prettier": "^2.5.1"
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.11",
+    "prettier": "^2.8.1"
   },
   "peerDependencies": {
     "@babel/eslint-parser": "^7.16.5",
