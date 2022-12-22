@@ -190,6 +190,9 @@ module.exports = {
         '**/__tests__/*.cjs',
         '**/__tests__/*.mjs',
       ],
+      env: {
+        jest: true,
+      },
       rules: {
         'max-len': 0,
         'max-lines-per-function': 0,
