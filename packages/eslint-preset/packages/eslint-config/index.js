@@ -204,7 +204,7 @@ module.exports = {
     {
       files: ['*.mjs'],
       rules: {
-        'import/extensions': ['error', 'always'],
+        'import/extensions': ['error', 'ignorePackages'],
       },
     },
   ],
