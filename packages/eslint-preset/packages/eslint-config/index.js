@@ -201,5 +201,11 @@ module.exports = {
         'no-magic-numbers': 0,
       },
     },
+    {
+      files: ['*.mjs'],
+      rules: {
+        'import/extensions': ['error', 'always'],
+      },
+    },
   ],
 }
