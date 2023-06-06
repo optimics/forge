@@ -1,0 +1,15 @@
+{
+  "name": "@optimics/forge",
+  "version": "0.0.0",
+  "description": "Collection of tools used by @optimics to build awesome stuff",
+  "main": "index.js",
+  "private": true,
+  "author": "Pavel Žák <pavel.zak@optimics.cz>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "lerna": "^6.6.2"
+  }
+}
