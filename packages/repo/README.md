@@ -57,6 +57,7 @@ We use Jest as our primary testing tool.
 
 * [jest](https://www.npmjs.com/package/jest) - Jest base package
 * [jest-environment-jsdom](https://www.npmjs.com/package/jest-environment-jsdom) - JSDOM environment as default, because most of our code lives in the browser
+* [jest-watch-typeahead](https://www.npmjs.com/package/jest-watch-typeahead) - Autosuggestions for your interactive test filter
 * [jest-watch-select-projects](https://www.npmjs.com/package/jest-watch-select-projects) - Interactively select which projects you want to test
 * [lerna-jest](https://www.npmjs.com/package/lerna-jest) - Configure repo packages as separate test suites
 * [ts-jest](https://www.npmjs.com/package/ts-jest) - Allow parsing Jest TypeScipt tests

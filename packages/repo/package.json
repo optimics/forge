@@ -33,6 +33,7 @@
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
     "jest-watch-select-projects": "^2.0.0",
+    "jest-watch-typeahead": "^2.2.2",
     "lerna": "^6.6.2",
     "lerna-isolate": "^0.10.0",
     "lerna-jest": "^0.10.0",
