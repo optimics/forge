@@ -10,7 +10,8 @@ cases, that are derived from the world of Data Analytics.
 
 ## Use cases
 
-Use this, if at least one of the following applies to your JavaScript project.
+Use this for your monorepo/multirepo, if at least one of the following applies
+to your JavaScript project.
 
 * It is a Cloud Function code
 * It is a Cloud Run code
