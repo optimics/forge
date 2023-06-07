@@ -1,0 +1,96 @@
+---
+image: node:20
+
+definitions:
+  caches:
+    npm: ~/.npm
+    sonar: ~/.sonar
+  steps:
+    - step: &build
+        name: Build
+        image: optimics/terraform:0.7
+        caches:
+          - npm
+        artifacts:
+          - dist/**
+        script:
+          - npm ci
+          - npm run build
+
+    - step: &test
+        name: Test
+        caches:
+          - npm
+        script:
+          - npm ci
+          - npm run lint
+          - npm test -- --coverage
+        artifacts:
+          - coverage/**
+
+    - step: &commitlint
+        name: Lint commits
+        clone:
+          depth: full
+        caches:
+          - npm
+        script:
+          - git remote update origin
+          - git fetch --all
+          - npm install @optimics/repo
+          - ./node_modules/.bin/commitlint -s --from origin/master
+
+    - step: &deploy
+        name: Deploy
+        image: optimics/terraform:0.7
+        script:
+          - . descope-env
+          - . init-gcs
+          - terraform workspace select $BITBUCKET_DEPLOYMENT_ENVIRONMENT
+          - terraform apply --input=false --auto-approve
+
+
+pipelines:
+  default:
+    - parallel:
+        - step: *build
+        - step: *test
+        - step: *commitlint
+
+  branches:
+    master:
+      - parallel:
+          - step: *build
+          - step: *test
+          - step: *commitlint
+      - step:
+          <<: *deploy
+          deployment: sg-demo
+
+  tags:
+    'v*':
+      - parallel:
+          - step: *build
+          - step: *test
+          - step: *commitlint
+      - step:
+          <<: *deploy
+          deployment: le-demo
+
+  custom:
+    release:
+      - step:
+          name: Make a version bump
+          script:
+            - echo ${RELEASE_PRIVATE_KEY} > ~/.ssh/id_ed25519.tmp
+            - base64 -d ~/.ssh/id_ed25519.tmp > ~/.ssh/id_ed25519
+            - chmod 600 ~/.ssh/id_ed25519
+            - rm ~/.ssh/config
+            - git remote remove origin
+            - git remote add origin ${BITBUCKET_GIT_SSH_ORIGIN}
+            - git fetch
+            - git checkout master
+            - npm install @optimics/repo
+            - ./node_modules/.bin/lerna version -y --conventional-commits
+            - git push
+            - git push --tags
