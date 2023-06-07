@@ -1,6 +1,6 @@
 {
   "name": "@optimics/repo",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Configure typical Optimics repository with a single command",
   "author": "Pavel Žák <pavel@zak.global>",
   "homepage": "https://github.com/optimics/forge#readme",
