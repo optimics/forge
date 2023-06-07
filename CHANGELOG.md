@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/optimics/forge/compare/v0.1.0...v0.1.1) (2023-06-07)
+
+
+### Bug Fixes
+
+* upgrade lerna-jest ([d57453e](https://github.com/optimics/forge/commit/d57453efa97c775669382f24d8a3e6b772e5f01b))
+
+
+
+
+
 # 0.1.0 (2023-06-07)
 
 
