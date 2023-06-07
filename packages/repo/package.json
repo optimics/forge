@@ -38,7 +38,7 @@
     "jest-watch-typeahead": "^2.2.2",
     "lerna": "^6.6.2",
     "lerna-isolate": "^0.11.0",
-    "lerna-jest": "^0.11.0",
+    "lerna-jest": "^0.11.1",
     "rome": "^12.1.3",
     "ts-jest": "^29.1.0",
     "typescript": "^5.1.3"
