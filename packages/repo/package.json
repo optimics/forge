@@ -9,9 +9,11 @@
   "main": "index.js",
   "private": false,
   "engines": {
-    "node": "^20.0.0"
+    "node": ">=18.0.0"
   },
   "files": [
+    "bin/*.js",
+    "examples/*",
     "*.js"
   ],
   "publishConfig": {
