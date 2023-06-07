@@ -7,6 +7,7 @@
   "author": "Pavel Žák <pavel.zak@optimics.cz>",
   "license": "MIT",
   "scripts": {
+    "lint": "rome check .",
     "test": "jest"
   },
   "devDependencies": {
