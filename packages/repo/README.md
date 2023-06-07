@@ -18,6 +18,10 @@ to your JavaScript project.
 * It is a Google Tag Manager library code
 * It is a Google Analytics library code
 
+## Examples
+
+See the [examples](./examples) directory.
+
 ## Contents
 
 The list of contents is open for debate and each of the tools should be
