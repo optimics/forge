@@ -1,11 +1,9 @@
 # `@optimics/webpack`
 
-> TODO: description
+> Configure typical Optimics webpack package
 
-## Usage
+## Installation
 
 ```
-const webpack = require('@optimics/webpack');
-
-// TODO: DEMONSTRATE API
+npm install --save-dev @optimics/repo @optimics/webpack
 ```

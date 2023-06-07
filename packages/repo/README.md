@@ -18,6 +18,12 @@ to your JavaScript project.
 * It is a Google Tag Manager library code
 * It is a Google Analytics library code
 
+## Installation
+
+```
+npm install --save-dev @optimics/repo
+```
+
 ## Examples
 
 See the [examples](./examples) directory.
