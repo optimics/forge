@@ -1,6 +1,6 @@
+import { guessRootConfig } from 'lerna-jest'
 import { dirname } from 'path'
 import { fileURLToPath } from 'url'
-import { guessRootConfig } from 'lerna-jest'
 
 const baseDir = dirname(fileURLToPath(import.meta.url))
 const config = guessRootConfig(baseDir)
@@ -10,6 +10,8 @@ const config = guessRootConfig(baseDir)
 config.workerIdleMemoryLimit = '300MB'
 
 // Avoid testing jest bindings
-config.projects = config.projects.filter(p => !p.displayName.includes('\/jest'))
+config.projects = config.projects.filter(
+  (p) => !p.displayName.includes('/jest'),
+)
 
 export default config
