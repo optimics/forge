@@ -1,5 +1,11 @@
-variable "common" {}
 variable "root" { type = string }
+
+variable "common" {
+  type = object({
+    dist_dir   = string,
+    production = optional(bool, true),
+  })
+}
 
 data "external" "git_checkout" {
   program = ["${abspath("${path.module}")}/get-sha.sh"]
