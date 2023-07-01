@@ -10,7 +10,7 @@
   "private": false,
   "engines": { "node": ">=18.0.0" },
   "keywords": ["jest", "configure", "test", "lerna"],
-  "files": ["dist/**/*.js", "__mocks__/*", "!**/__tests__/**"],
+  "files": ["dist/**/*.js", "dist/**/*.d.ts", "__mocks__/*", "!**/__tests__/**"],
   "publishConfig": {
     "access": "public"
   },

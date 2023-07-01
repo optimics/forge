@@ -9,7 +9,7 @@
   "main": "dist/index.js",
   "private": false,
   "engines": { "node": ">=16.0.0" },
-  "files": ["dist/**/*.js"],
+  "files": ["dist/**/*.js", "dist/**/*.d.ts"],
   "publishConfig": {
     "access": "public"
   },
