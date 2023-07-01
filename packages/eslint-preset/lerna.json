@@ -1,7 +1,0 @@
-{
-  "packages": [
-    "packages/*"
-  ],
-  "version": "0.5.8",
-  "useWorkspaces": true
-}
