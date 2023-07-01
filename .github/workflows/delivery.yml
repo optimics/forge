@@ -31,6 +31,8 @@ jobs:
       - name: Build
         run: npm run build
       - name: Publish packages
-        run: lerna publish from-git --yes
+        run: |
+          npm whoami
+          lerna publish from-git --yes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_KEY }}
