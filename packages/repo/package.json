@@ -1,6 +1,6 @@
 {
   "name": "@optimics/repo",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Configure typical Optimics repository with a single command",
   "author": "Pavel Žák <pavel@zak.global>",
   "homepage": "https://github.com/optimics/forge#readme",
@@ -8,9 +8,18 @@
   "type": "module",
   "main": "index.js",
   "private": false,
-  "engines": { "node": ">=18.0.0" },
-  "keywords": ["npm", "lerna"],
-  "files": ["bin/*.js", "examples/*", "*.js"],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "npm",
+    "lerna"
+  ],
+  "files": [
+    "bin/*.js",
+    "examples/*",
+    "*.js"
+  ],
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"

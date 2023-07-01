@@ -1,6 +1,6 @@
 {
   "name": "@optimics/jest",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Almost zero config orchestrator for jest",
   "author": "just-paja <pavel@zak.global>",
   "homepage": "https://github.com/optimics/forge#readme",
@@ -8,9 +8,21 @@
   "type": "module",
   "main": "dist/index.js",
   "private": false,
-  "engines": { "node": ">=18.0.0" },
-  "keywords": ["jest", "configure", "test", "lerna"],
-  "files": ["dist/**/*.js", "dist/**/*.d.ts", "__mocks__/*", "!**/__tests__/**"],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "jest",
+    "configure",
+    "test",
+    "lerna"
+  ],
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts",
+    "__mocks__/*",
+    "!**/__tests__/**"
+  ],
   "publishConfig": {
     "access": "public"
   },

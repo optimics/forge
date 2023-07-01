@@ -13,23 +13,5 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
+* include declaration files ([8530e18](https://github.com/optimics/forge/commit/8530e18d859f57625339918d8ec432f76f2e3fde))
 * integrate jest orchestrator based ([974ab07](https://github.com/optimics/forge/commit/974ab07fbb7c4b6271b6b4c50433f4c3c1fba146))
-
-
-
-
-
-# [0.2.0](https://github.com/optimics/forge/compare/v0.1.1...v0.2.0) (2023-06-27)
-
-**Note:** Version bump only for package @optimics/webpack
-
-
-
-
-
-# 0.1.0 (2023-06-07)
-
-
-### Features
-
-* port webpack methods ([d5e22df](https://github.com/optimics/forge/commit/d5e22df5c54b0e40cc6c1d1033b2edcf68532b6b))

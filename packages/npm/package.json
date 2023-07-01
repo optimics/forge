@@ -1,6 +1,6 @@
 {
   "name": "@optimics/npm",
-  "version": "0.1.1",
+  "version": "0.3.0",
   "description": "Bindings for often used npm functions",
   "author": "Pavel Žák <pavel@zak.global>",
   "homepage": "https://github.com/optimics/forge#readme",
@@ -8,8 +8,13 @@
   "type": "module",
   "main": "dist/index.js",
   "private": false,
-  "engines": { "node": ">=16.0.0" },
-  "files": ["dist/**/*.js", "dist/**/*.d.ts"],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
+  ],
   "publishConfig": {
     "access": "public"
   },
