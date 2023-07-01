@@ -8,6 +8,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "rome check .",
+    "build": "lerna run build --stream",
     "test": "jest"
   },
   "devDependencies": {
