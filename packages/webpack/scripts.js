@@ -114,12 +114,7 @@ export const createDevServer = (webpackEnv) => {
   return new WebpackDevServer(devServerOptions, compiler)
 }
 
-export const configurePackage = ({
-  defaultPort,
-  entryPath,
-  env,
-  srcDir,
-}) => {
+export const configurePackage = ({ defaultPort, entryPath, env, srcDir }) => {
   const getWebpackEnvironment = () => ({
     defaultPort,
     entryPath,
@@ -132,7 +127,6 @@ export const configurePackage = ({
   })
 
   const build = () => transpileScript(getWebpackEnvironment())
-  const runDevServer = () =>
-    createDevServer(getWebpackEnvironment()).start()
+  const runDevServer = () => createDevServer(getWebpackEnvironment()).start()
   return { build, runDevServer }
 }

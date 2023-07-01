@@ -1,8 +1,8 @@
 import type { Config } from '@jest/types'
 import type { PackageJson } from '@optimics/npm'
 
-import { createRequire } from 'node:module'
 import { existsSync } from 'fs'
+import { createRequire } from 'node:module'
 import { join, resolve } from 'path'
 
 type JestObjectSpec = string | [string, Record<string, unknown>]
@@ -24,7 +24,10 @@ function verifyPluginExistence(root: string, pluginName: string): boolean {
   }
 }
 
-export function testPluginExistence(root: string, pluginName: JestObjectSpec): boolean {
+export function testPluginExistence(
+  root: string,
+  pluginName: JestObjectSpec,
+): boolean {
   const name = parsePluginName(pluginName)
   if (!(name in pluginQueryCache)) {
     pluginQueryCache[name] = verifyPluginExistence(root, name)
@@ -39,7 +42,9 @@ export function getTransforms(pkg: PackageJson): Transforms {
       ['\\.(svg)$', 'jest-svg-transformer'],
       ['\\.(svg)$', 'jest-transformer-svg'],
       ['\\.(css|styl|less|sass|scss)$', 'jest-css-modules-transform'],
-    ].filter(([, transformModule]) => testPluginExistence(pkg.root, transformModule as JestObjectSpec))
+    ].filter(([, transformModule]) =>
+      testPluginExistence(pkg.root, transformModule as JestObjectSpec),
+    ),
   )
 }
 
@@ -50,13 +55,13 @@ export function getWatchPlugins(pkg: PackageJson): WatchPlugins {
       'jest-watch-select-projects',
       'jest-watch-typeahead/filename',
       'jest-watch-typeahead/testname',
-    ].filter(item => testPluginExistence(pkg.root, item)),
+    ].filter((item) => testPluginExistence(pkg.root, item)),
   ]
 }
 
 export function getSetupFiles(pkg: PackageJson): string[] {
   return [
-    ...['jest-date-mock'].filter(item => testPluginExistence(pkg.root, item)),
+    ...['jest-date-mock'].filter((item) => testPluginExistence(pkg.root, item)),
     ...[
       resolve(pkg.path, '..', '..', 'jest.setup.js'),
       resolve(pkg.path, '..', 'jest.setup.js'),
@@ -67,7 +72,9 @@ export function getSetupFiles(pkg: PackageJson): string[] {
 
 export function getSetupFilesAfterEnv(pkg: PackageJson): string[] {
   return [
-    ...['jest-enzyme', 'jest-extended'].filter(item => testPluginExistence(pkg.root, item)),
+    ...['jest-enzyme', 'jest-extended'].filter((item) =>
+      testPluginExistence(pkg.root, item),
+    ),
     ...[
       resolve(pkg.path, '..', '..', 'jest.afterEnv.js'),
       resolve(pkg.path, '..', 'jest.afterEnv.js'),

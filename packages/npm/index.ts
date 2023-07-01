@@ -1,7 +1,7 @@
 import type { IPackageJson } from 'package-json-type'
 
-import { lstatSync, readFileSync } from 'fs'
 import { execSync } from 'child_process'
+import { lstatSync, readFileSync } from 'fs'
 import { dirname, join } from 'path'
 import { fileURLToPath } from 'url'
 
@@ -24,7 +24,9 @@ export function urlToCwd(url: string): string {
 }
 
 export function getRoot(cwd?: string): string {
-  return execSync('npm prefix', { cwd: cwd && urlToCwd(cwd) }).toString().trim()
+  return execSync('npm prefix', { cwd: cwd && urlToCwd(cwd) })
+    .toString()
+    .trim()
 }
 
 function appendRoot(root: string, pkg: PackageJson): PackageJson {
@@ -33,7 +35,7 @@ function appendRoot(root: string, pkg: PackageJson): PackageJson {
 
 function createFormatter(cwd?: string) {
   const root = getRoot(cwd)
-  return function(pkg: PackageJson): PackageJson {
+  return function (pkg: PackageJson): PackageJson {
     return appendRoot(root, pkg)
   }
 }
@@ -43,15 +45,22 @@ export function getPackages(cwd?: string): PackageJson[] {
 }
 
 export function getPackageNames(cwd?: string): string[] {
-  return getPackages(cwd).map(p => p.name)
+  return getPackages(cwd).map((p) => p.name)
 }
 
-export function getPackageJsonByName(cwd: string, packageName: string): PackageJson {
-  const root = getRoot(cwd)
-  return appendRoot(root, query(`npm query [name="${packageName}"]`, cwd)[0])
+export function getPackageJsonByName(
+  cwd: string,
+  packageName: string,
+): PackageJson {
+  return appendRoot(
+    getRoot(cwd),
+    query(`npm query [name="${packageName}"]`, cwd)[0]
+  )
 }
 
 export function readPackageJson(cwd: string): PackageJson {
-  const root = getRoot(cwd)
-  return appendRoot(cwd, JSON.parse(readFileSync(join(cwd, 'package.json')).toString()))
+  return appendRoot(
+    getRoot(cwd),
+    JSON.parse(readFileSync(join(cwd, 'package.json')).toString()),
+  )
 }

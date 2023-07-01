@@ -1,5 +1,5 @@
-import type { PackageJson } from '@optimics/npm'
 import type { ProjectConfig } from './types'
+import type { PackageJson } from '@optimics/npm'
 
 import { testPluginExistence } from './plugins.js'
 import { configureSuite } from './suite.js'

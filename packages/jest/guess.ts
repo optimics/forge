@@ -1,11 +1,11 @@
-import type { PackageJson } from '@optimics/npm'
 import type { ProjectConfig, SuiteConfig } from './types'
+import type { PackageJson } from '@optimics/npm'
 
-import { getPackages, readPackageJson, urlToCwd } from '@optimics/npm'
 import { configureIntegration } from './integration.js'
 import { configureLinter } from './linter.js'
-import { configureRoot } from './project.js'
 import { setPluginEnvVars } from './plugins.js'
+import { configureRoot } from './project.js'
+import { getPackages, readPackageJson, urlToCwd } from '@optimics/npm'
 
 function guessPackageProjects(pkg: PackageJson): ProjectConfig[] {
   const integration = configureIntegration(pkg)
@@ -22,7 +22,7 @@ export function guessRootConfig(path: string): SuiteConfig {
   const directory = urlToCwd(path)
   const rootPkg = readPackageJson(directory)
   const packages = getPackages(directory)
-  const projects = packages.flatMap(pkg => guessPackageProjects(pkg))
+  const projects = packages.flatMap((pkg) => guessPackageProjects(pkg))
   const rootConfig = configureRoot(rootPkg, projects)
   setPluginEnvVars(rootPkg)
   return rootConfig

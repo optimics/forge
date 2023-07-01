@@ -1,7 +1,6 @@
-import type { PackageJson } from '@optimics/npm'
 import type { ProjectConfig } from './types'
+import type { PackageJson } from '@optimics/npm'
 
-import { dirname, join } from 'path'
 import {
   getSetupFiles,
   getSetupFilesAfterEnv,
@@ -9,6 +8,7 @@ import {
   testPluginExistence,
 } from './plugins.js'
 import { configureSuite } from './suite.js'
+import { dirname, join } from 'path'
 import { fileURLToPath } from 'url'
 
 const baseDir = join(dirname(fileURLToPath(import.meta.url)), '..')
@@ -16,7 +16,7 @@ const testMatch = [
   '<rootDir>/**/__tests__/*.{cjs,js,jsx,mjs}',
   '<rootDir>/**/__tests__/*.{ts,tsx,cts,mts,ctsx,mtsx}',
 ]
-    
+
 const mockExtensions = [
   'md',
   'jpg',
@@ -41,12 +41,11 @@ const mockExtensions = [
 ]
 
 function getMockList(pkg: PackageJson): string[] {
-  const hasSvgTransformer = (
-    testPluginExistence(pkg.root, 'jest-svg-transformer') || 
+  const hasSvgTransformer =
+    testPluginExistence(pkg.root, 'jest-svg-transformer') ||
     testPluginExistence(pkg.root, 'jest-transformer-svg')
-  )
   return hasSvgTransformer
-    ? mockExtensions.filter(e => e === 'svg')
+    ? mockExtensions.filter((e) => e === 'svg')
     : mockExtensions
 }
 
@@ -54,7 +53,7 @@ export function configureIntegration(pkg: PackageJson): ProjectConfig {
   const mockPath = join(baseDir, '__mocks__', 'fileMock.mjs')
   const mockList = getMockList(pkg).reduce(
     (aggr, ext) => Object.assign(aggr, { [`\\.${ext}$`]: mockPath }),
-    {}
+    {},
   )
   const cfg = configureSuite(pkg, 'test', {
     testMatch,

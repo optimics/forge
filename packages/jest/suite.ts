@@ -1,10 +1,10 @@
-import type { PackageJson } from '@optimics/npm'
 import type { ProjectConfig } from './types'
+import type { PackageJson } from '@optimics/npm'
 
 export function configureSuite(
   pkg: PackageJson,
   ident: string,
-  config: ProjectConfig
+  config: ProjectConfig,
 ): ProjectConfig {
   return {
     displayName: getId(pkg, ident),

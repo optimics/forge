@@ -1,5 +1,5 @@
-import type { PackageJson } from '@optimics/npm'
 import type { ProjectConfig, SuiteConfig } from './types'
+import type { PackageJson } from '@optimics/npm'
 
 import { getWatchPlugins } from './plugins.js'
 
