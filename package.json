@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "rome check .",
     "build": "lerna run build --stream",
-    "test": "jest"
+    "test": "lerna run test --stream"
   },
   "devDependencies": {
     "@babel/core": "^7.22.5",
