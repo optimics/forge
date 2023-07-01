@@ -1,0 +1,34 @@
+{
+  "name": "@optimics/jest",
+  "version": "0.11.1",
+  "description": "Almost zero config orchestrator for jest",
+  "author": "just-paja <pavel@zak.global>",
+  "homepage": "https://github.com/optimics/forge#readme",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "private": false,
+  "engines": { "node": ">=18.0.0" },
+  "keywords": ["jest", "configure", "test", "lerna"],
+  "files": ["dist/**/*.js", "__mocks__/*", "!**/__tests__/**"],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/optimics/forge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/optimics/forge/issues"
+  },
+  "dependencies": {
+    "@optimics/npm": "file:../npm",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "jest-watch-select-projects": "^2.0.0",
+    "jest-watch-typeahead": "^2.2.2"
+  },
+  "scripts": {
+    "build": "tsc"
+  }
+}
