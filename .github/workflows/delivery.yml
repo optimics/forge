@@ -28,6 +28,8 @@ jobs:
         run: npm ci
       - name: Lint
         run: npm run lint
+      - name: Build
+        run: lerna run build --stream
       - name: Publish packages
         run: lerna publish from-git --yes
         env:
