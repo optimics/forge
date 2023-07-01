@@ -26,8 +26,8 @@
     "url": "https://github.com/optimics/forge/issues"
   },
   "dependencies": {
-    "ts-loader": "^9.4.3",
-    "webpack": "^5.85.1",
-    "webpack-dev-server": "^4.15.0"
+    "ts-loader": "^9.4.4",
+    "webpack": "^5.88.1",
+    "webpack-dev-server": "^4.15.1"
   }
 }
