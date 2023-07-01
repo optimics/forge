@@ -1,4 +1,4 @@
-const replace = (node, replacement) => fixer =>
+const replace = (node, replacement) => (fixer) =>
   fixer.replaceText(node, replacement)
 
 module.exports = {

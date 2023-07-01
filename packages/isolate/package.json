@@ -1,0 +1,56 @@
+{
+  "name": "@optimics/isolate",
+  "version": "0.3.0",
+  "description": "Extract your app from lerna repository with local package dependencies",
+  "author": "just-paja <pavel@zak.global>",
+  "homepage": "https://github.com/optimics/forge#readme",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "private": false,
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "keywords": [
+    "lerna",
+    "debootstrap",
+    "extract",
+    "dependencies",
+    "production",
+    "build",
+    "delink",
+    "isolate"
+  ],
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts",
+    "__mocks__/*",
+    "!**/__tests__/**"
+  ],
+  "bin": {
+    "lerna-isolate": "dist/isolate.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/optimics/forge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/optimics/forge/issues"
+  },
+  "dependencies": {
+    "@optimics/npm": "file:../npm",
+    "archiver": "^5.3.1",
+    "fast-glob": "^3.2.12",
+    "ora": "^6.1.2",
+    "rimraf": "^4.4.1",
+    "tar": "^6.1.13",
+    "tmp-promise": "^3.0.3",
+    "yargs": "^17.6.2"
+  },
+  "scripts": {
+    "build": "tsc"
+  }
+}

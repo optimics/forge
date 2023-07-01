@@ -13,8 +13,9 @@
     "module": "ESNext",
     "moduleResolution": "node",
     "strict": true,
-    "target": "es6",
-    "types": ["@types/node"],
+    "target": "es2017",
+    "types": ["node"],
+    "typeRoots": ["node_modules/@types"],
     "useUnknownInCatchVariables": false
   },
   "exclude": [

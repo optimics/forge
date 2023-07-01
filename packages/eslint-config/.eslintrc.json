@@ -3,9 +3,7 @@
     "commonjs": true,
     "node": true
   },
-  "extends": [
-    "@optimics/eslint-config"
-  ],
+  "extends": ["@optimics/eslint-config"],
   "parserOptions": {
     "babelOptions": {
       "configFile": "./.babelrc.json"
