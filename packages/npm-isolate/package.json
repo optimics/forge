@@ -1,5 +1,5 @@
 {
-  "name": "@optimics/isolate",
+  "name": "@optimics/npm-isolate",
   "version": "0.3.0",
   "description": "Extract your app from lerna repository with local package dependencies",
   "author": "just-paja <pavel@zak.global>",
