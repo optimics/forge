@@ -191,8 +191,7 @@ export class Package {
 
   async integrateDependency(dep: Package): Promise<Package | null> {
     try {
-      await this.confirmPublishedVersion(dep)
-      return null
+      return await this.confirmPublishedVersion(dep)
     } catch (e) {
       if (
         e instanceof PrivatePackageError ||
@@ -248,7 +247,7 @@ export class Package {
   }
 
   referenceStoredDependency(dep: Package): void {
-    const versionRef = `file:isolated-${dep.npmPackageName}`
+    const versionRef = dep.manifest.private ? `file:isolated-${dep.npmPackageName}` : dep.version
     if (!this.dependencies) {
       this.dependencies = {}
     }

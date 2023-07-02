@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import type { GetPackagesOptions } from '@optimics/npm'
 import type { ScopeCommandOptions } from './runner'
+import type { GetPackagesOptions } from '@optimics/npm'
 
 import fg from 'fast-glob'
 import yargs, { Argv } from 'yargs'
@@ -152,7 +152,6 @@ const argv = await yargs(hideBin(process.argv))
         string: true,
       })
     },
-    // printScopes
   )
   .command('clean', 'clean artifacts')
   .demandCommand()
@@ -167,6 +166,8 @@ if (command === 'bundle') {
   await runScopeCommand(argv as ScopeCommandOptions)
 } else if (command === 'packages') {
   await printPackages(getRoot(), argv as GetPackagesOptions)
+} else if (command === 'scopes') {
+  await printScopes(getRoot(), argv as GetPackagesOptions)
 } else if (command === 'clean') {
   await cleanPackages()
 }

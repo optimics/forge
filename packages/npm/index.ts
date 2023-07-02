@@ -92,7 +92,7 @@ export function createPackageFilter(options: GetPackagesOptions): PackageFilter 
       result = result && extractPackageName(p).startsWith(startsWith)
     }
     if (withScript) {
-      result = result && Boolean(p.scripts && p.scripts[withScript])
+      result = result && Boolean(p?.scripts?.[withScript])
     }
     return result
   }
