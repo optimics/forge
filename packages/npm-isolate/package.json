@@ -22,13 +22,14 @@
     "isolate"
   ],
   "files": [
+    "*.js",
     "dist/**/*.js",
     "dist/**/*.d.ts",
     "__mocks__/*",
     "!**/__tests__/**"
   ],
   "bin": {
-    "lerna-isolate": "dist/isolate.js"
+    "npm-isolate": "isolate.js"
   },
   "publishConfig": {
     "access": "public"
