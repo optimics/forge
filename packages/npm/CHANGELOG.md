@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/optimics/forge/compare/v0.3.0...v0.6.0) (2023-07-02)
+
+
+### Features
+
+* integrate package isolation ([788193e](https://github.com/optimics/forge/commit/788193e05efd3259d59a2133a83379a978fbfd76))
+* print project scopes ([d57c80c](https://github.com/optimics/forge/commit/d57c80c34f4d359776bfa2a271e303c078d153d8))
+
+
+
+
+
 # [0.3.0](https://github.com/optimics/forge/compare/v0.2.0...v0.3.0) (2023-07-01)
 
 
