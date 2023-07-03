@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/optimics/forge/compare/v0.6.0...v0.7.0) (2023-07-03)
+
+
+### Features
+
+* use latest lerna ([5e0fc30](https://github.com/optimics/forge/commit/5e0fc30e21b6077048d0cabbb4257f7c96b55d77))
+
+
+
+
+
 # [0.6.0](https://github.com/optimics/forge/compare/v0.3.0...v0.6.0) (2023-07-02)
 
 **Note:** Version bump only for package @optimics/repo
