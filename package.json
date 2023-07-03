@@ -17,7 +17,6 @@
     "@types/node": "^20.3.3",
     "@types/tar": "^6.1.5",
     "@types/tmp": "^0.2.3",
-    "lerna": "^6.6.2",
     "package-json-type": "^1.0.3"
   },
   "workspaces": [
