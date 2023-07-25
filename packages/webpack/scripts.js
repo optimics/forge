@@ -47,8 +47,9 @@ export const compile = (compiler) =>
   })
 
 export const getWebpackConfig = ({
-  distDir,
   bundleName,
+  compilerConfig,
+  distDir,
   entryPath,
   env,
   manifest,
@@ -83,6 +84,7 @@ export const getWebpackConfig = ({
   },
   plugins: [new webpack.EnvironmentPlugin(env), ...plugins],
   target: 'web',
+  ...compilerConfig,
 })
 
 export const transpileScript = async ({ env, ...props }) => {
