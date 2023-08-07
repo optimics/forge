@@ -1,0 +1,38 @@
+{
+  "name": "@optimics/webpack-website-proxy",
+  "version": "0.7.1",
+  "description": "Inject your webpack generated bundles inside a live website via proxy and webpack dev server",
+  "author": "Pavel Žák <pavel.zak@optimics.cz>",
+  "homepage": "https://github.com/optimics/forge#readme",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "private": false,
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "dist/*.js",
+    "dist/*.d.ts"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/optimics/forge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/optimics/forge/issues"
+  },
+  "dependencies": {
+    "html-webpack-plugin": "^5.5.3",
+    "node-fetch": "^3.3.2",
+    "node-html-parser": "^6.1.5"
+  }
+}

@@ -8,3 +8,4 @@
 * [@optimics/npm](./packages/npm) - Tiny npm API library used to query your workspaces
 * [@optimics/repo](./packages/repo) - Start your repository Optimics way
 * [@optimics/webpack](./packages/webpack) - Shortcuts library for webpack
+* [@optimics/webpack-website-proxy](./packages/webpack-website-proxy) - Proxy website using dev server

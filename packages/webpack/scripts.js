@@ -3,6 +3,7 @@ import { getBranchVars, getMode } from './env.js'
 import { readFileSync } from 'fs'
 import { join } from 'path'
 
+import HtmlWebpackPlugin from 'html-webpack-plugin'
 import webpack from 'webpack'
 import WebpackDevServer from 'webpack-dev-server'
 
@@ -10,6 +11,15 @@ const defaultPort = 3000
 
 export const readManifest = (packageDir) =>
   JSON.parse(readFileSync(join(packageDir, 'package.json')))
+
+
+let wwp
+
+try {
+  wwp = await import('@optimics/webpack-website-proxy')
+} catch (_e) {
+  // intentionally ignored
+}
 
 /**
  * A shortcut to wait until webpack transiplation finishes
@@ -100,12 +110,25 @@ export const transpileScript = async ({ env, ...props }) => {
   return { result, config }
 }
 
-export const createDevServer = (webpackEnv) => {
+export const createDevServer = ({ proxyWebsite, ...webpackEnv }) => {
   const webpackConfig = getWebpackConfig({ devServer: true, ...webpackEnv })
+  const injectPlugins = []
+  if (proxyWebsite) {
+    if (!wwp) {
+      throw new Error('Please install "@optimics/webpack-website-proxy"')
+    }
+    if (!webpackConfig.plugins.some(plugin => plugin.constructor.name === 'HtmlWebpackPlugin')) {
+      injectPlugins.push(new HtmlWebpackPlugin({}))
+    }
+    injectPlugins.push(new wwp.WebsiteProxyPlugin(proxyWebsite))
+  }
   const compilerConfig = {
     ...webpackConfig,
     entry: webpackEnv.entryPathDev || webpackEnv.entryPath,
-    plugins: [...webpackConfig.plugins].filter(Boolean),
+    plugins: [
+      ...webpackConfig.plugins,
+      ...injectPlugins
+    ].filter(Boolean),
   }
   const compiler = webpack(compilerConfig)
   const devServerOptions = {
@@ -116,7 +139,7 @@ export const createDevServer = (webpackEnv) => {
   return new WebpackDevServer(devServerOptions, compiler)
 }
 
-export const configurePackage = ({ defaultPort, entryPath, env, srcDir }) => {
+export const configurePackage = ({ defaultPort, entryPath, env, proxyWebsite, srcDir }) => {
   const getWebpackEnvironment = () => ({
     defaultPort,
     entryPath,
@@ -126,6 +149,7 @@ export const configurePackage = ({ defaultPort, entryPath, env, srcDir }) => {
       ...env,
     },
     manifest: readManifest(srcDir),
+    proxyWebsite,
   })
 
   const build = () => transpileScript(getWebpackEnvironment())
