@@ -1,6 +1,6 @@
 {
   "name": "@optimics/webpack",
-  "version": "0.7.1",
+  "version": "0.8.0",
   "description": "Configure typical Optimics webpack packages",
   "author": "Pavel Žák <pavel.zak@optimics.cz>",
   "homepage": "https://github.com/optimics/forge#readme",

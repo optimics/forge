@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-optimics",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "Additional Optimics rules",
   "author": "Pavel Žák <pavel.zak@optimics.cz>",
   "homepage": "https://github.com/optimics/eslint-config#readme",

@@ -1,6 +1,6 @@
 {
   "name": "@optimics/npm",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "Bindings for often used npm functions",
   "author": "Pavel Žák <pavel@zak.global>",
   "homepage": "https://github.com/optimics/forge#readme",
