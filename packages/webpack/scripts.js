@@ -120,7 +120,7 @@ export const createDevServer = ({ proxyWebsite, ...webpackEnv }) => {
     if (!webpackConfig.plugins.some(plugin => plugin.constructor.name === 'HtmlWebpackPlugin')) {
       injectPlugins.push(new HtmlWebpackPlugin({}))
     }
-    injectPlugins.push(new wwp.WebsiteProxyPlugin(proxyWebsite))
+    injectPlugins.push(new wwp.default(proxyWebsite))
   }
   const compilerConfig = {
     ...webpackConfig,
