@@ -70,11 +70,15 @@ export function extractProjectScope(p: PackageJson): string {
   return p.name.split('/')[0]
 }
 
+function extractPackageNameFromString(p: string): string {
+  return p.split('/').reverse()[0]
+}
+
 export function extractPackageName(p: PackageJson | string): string {
   if (typeof p === 'string') {
-    return p.split('/')[1]
+    return extractPackageNameFromString(p)
   }
-  return p.name.split('/')[1]
+  return extractPackageNameFromString(p.name)
 }
 
 export function padScope(scope: string): string | null {
