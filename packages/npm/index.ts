@@ -2,7 +2,7 @@ import type { IPackageJson, IScriptsMap } from 'package-json-type'
 
 import { execSync } from 'child_process'
 import { lstatSync, readFileSync } from 'fs'
-import { dirname, join } from 'path'
+import { dirname, join, sep } from 'path'
 import { fileURLToPath } from 'url'
 
 export type ScriptsMap = IScriptsMap & {
@@ -30,10 +30,25 @@ export function urlToCwd(url: string): string {
   return lstatSync(pathSrc).isDirectory() ? pathSrc : dirname(pathSrc)
 }
 
-export function getRoot(cwd?: string): string {
-  return execSync('npm prefix', { cwd: cwd && urlToCwd(cwd) })
+function getPrefix(cwd?: string): string {
+  return execSync('npm prefix', { cwd })
     .toString()
     .trim()
+}
+
+export function getRoot(cwd?: string): string {
+  const rawCwd = cwd && urlToCwd(cwd)
+  const prefix = getPrefix(rawCwd)
+  /* npm prefix returns path, that goes to the first directory containing
+   * node_modules, however, we want to get the monorepository root even from
+   * node_modules, so we just get the prefix and then trim the path to the top
+   * level directory containing node_modules */
+  const prefixSplit = prefix.split(sep)
+  const modulesIndex = prefixSplit.indexOf('node_modules')
+  if (modulesIndex === -1) {
+    return prefix
+  }
+  return prefixSplit.slice(0, modulesIndex).join(sep)
 }
 
 function appendRoot(root: string, pkg: PackageJson): PackageJson {
