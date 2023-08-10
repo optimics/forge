@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.2](https://github.com/optimics/forge/compare/v0.8.1...v0.8.2) (2023-08-10)
+
+
+### Bug Fixes
+
+* extract no-prefix package name ([823d0dd](https://github.com/optimics/forge/commit/823d0ddf0d74c0b68061386de8dfccc2f5ad565c))
+* find root from node_modules ([3ec9dba](https://github.com/optimics/forge/commit/3ec9dba95c0a2b73a39cdc9c0cd70d1d4656d04e))
+
+
+
+
+
 ## [0.8.1](https://github.com/optimics/forge/compare/v0.8.0...v0.8.1) (2023-08-09)
 
 

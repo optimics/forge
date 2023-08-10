@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.2](https://github.com/optimics/forge/compare/v0.8.1...v0.8.2) (2023-08-10)
+
+**Note:** Version bump only for package @optimics/npm-isolate
+
+
+
+
+
 # [0.8.0](https://github.com/optimics/forge/compare/v0.7.1...v0.8.0) (2023-08-07)
 
 **Note:** Version bump only for package @optimics/npm-isolate
