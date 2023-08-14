@@ -1,6 +1,7 @@
 import type { PackageJson } from '@optimics/npm'
 
 export enum IsolateOptions {
+  build = 'build',
   ignore = 'ignore',
   isolate = 'isolate',
   versionNeutral = 'version:neutral',
@@ -48,7 +49,11 @@ export class IsolateConfig {
   constructor(manifest: PackageJson) {
     const src = manifest?.isolation || {}
     this.cfg = {
-      build: Boolean(manifest.scripts?.build),
+      build: readFlag(
+        src,
+        IsolateOptions.build,
+        Boolean(manifest.scripts?.build || manifest.scripts?.compile),
+      ),
       ignore: readFlag(src, IsolateOptions.ignore),
       isolate: readFlag(src, IsolateOptions.isolate, true),
       package: {
