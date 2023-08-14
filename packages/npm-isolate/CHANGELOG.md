@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.3](https://github.com/optimics/forge/compare/v0.8.2...v0.8.3) (2023-08-14)
+
+
+### Bug Fixes
+
+* override build flag ([37a27a4](https://github.com/optimics/forge/commit/37a27a48c51a01646494b10089b29285c88d21ae))
+
+
+
+
+
 ## [0.8.2](https://github.com/optimics/forge/compare/v0.8.1...v0.8.2) (2023-08-10)
 
 **Note:** Version bump only for package @optimics/npm-isolate

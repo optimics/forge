@@ -1,6 +1,6 @@
 {
   "name": "@optimics/npm-isolate",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "description": "Extract your app from lerna repository with local package dependencies",
   "author": "just-paja <pavel@zak.global>",
   "homepage": "https://github.com/optimics/forge#readme",
