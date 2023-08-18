@@ -139,9 +139,10 @@ export const createDevServer = ({ proxyWebsite, ...webpackEnv }) => {
   return new WebpackDevServer(devServerOptions, compiler)
 }
 
-export const configurePackage = ({ defaultPort, entryPath, env, proxyWebsite, srcDir }) => {
+export const configurePackage = ({ defaultPort, devServerOptions, entryPath, env, proxyWebsite, srcDir }) => {
   const getWebpackEnvironment = () => ({
     defaultPort,
+    devServerOptions,
     entryPath,
     env: {
       NODE_DEBUG: Boolean(process.env.NODE_DEBUG),
