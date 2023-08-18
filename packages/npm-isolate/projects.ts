@@ -26,7 +26,7 @@ import {
   readdirSync,
   writeFileSync,
 } from 'fs'
-import { copyFile, mkdir, stat } from 'fs/promises'
+import { copyFile, cp, mkdir, stat } from 'fs/promises'
 import { join } from 'path'
 import { rimrafSync } from 'rimraf'
 
@@ -101,6 +101,12 @@ export class Package {
     return `${this.safeName}-${this.version}.tgz`
   }
 
+  get rawPackageName(): string {
+    return this.flags.versionNeutral
+      ? this.safeName
+      : `${this.safeName}-${this.version}`
+  }
+
   get npmPackageName() {
     return this.flags.versionNeutral
       ? `${this.safeName}.tgz`
@@ -119,6 +125,14 @@ export class Package {
 
   get npmPackagePathRoot(): string {
     return join(this.project.distPath, this.npmPackageName)
+  }
+
+  get rawPackagePathRoot(): string {
+    return join(this.project.distPath, this.rawPackageName)
+  }
+
+  get rawPackagePathLocal(): string {
+    return join(this.path, this.rawPackageName)
   }
 
   get zipPackagePathRoot(): string {
@@ -286,6 +300,11 @@ export class Package {
     this.project.addProduct(dest)
   }
 
+  async storeDir(src: string, dest: string): Promise<void> {
+    await cp(src, dest, { recursive: true })
+    this.project.addProduct(dest)
+  }
+
   async storeNpmPackage(): Promise<void> {
     if (this.flags.storeLocal) {
       await this.storeFile(this.npmPackagePathTemp, this.npmPackagePathLocal)
@@ -293,6 +312,16 @@ export class Package {
     if (this.flags.storeRoot) {
       await this.storeFile(this.npmPackagePathTemp, this.npmPackagePathRoot)
     }
+  }
+
+  async storeRawPackage(): Promise<void> {
+    if (this.flags.storeLocal) {
+      await this.storeDir(this.npmPackageExtractTempPath, this.rawPackagePathLocal)
+    }
+    if (this.flags.storeRoot) {
+      await this.storeDir(this.npmPackageExtractTempPath, this.rawPackagePathRoot)
+    }
+
   }
 
   async storeZipPackage(): Promise<void> {
@@ -405,6 +434,9 @@ export class Package {
 
     if (this.flags.packRaw || this.flags.packZip) {
       jobs.push({ name: 'Extract', fn: () => this.extract() })
+      if (this.flags.packRaw) {
+        jobs.push({ name: 'Store Raw', fn: () => this.storeRawPackage() })
+      }
     }
 
     if (this.flags.packZip) {
