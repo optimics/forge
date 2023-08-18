@@ -11,7 +11,7 @@ import { exists, rmrf } from './fs.js'
 import { JobRunner } from './jobs.js'
 import { Package, Project } from './projects.js'
 import { runScopeCommand } from './runner.js'
-import { printPackages, printScopes} from './scopes.js'
+import { printPackages, printScopes } from './scopes.js'
 import { getRoot } from '@optimics/npm'
 import { join, relative } from 'path'
 import { hideBin } from 'yargs/helpers'
@@ -32,7 +32,7 @@ async function isolatePackages(argv: IsolatePackagesOptions): Promise<void> {
   })
   project.on('packageIsolated', () => {
     products.map((productPath: string) =>
-      log(relative(process.cwd(), productPath), { clear: true, padding: 2 })
+      log(relative(process.cwd(), productPath), { clear: true, padding: 2 }),
     )
     products = []
   })
@@ -49,16 +49,19 @@ async function isolatePackages(argv: IsolatePackagesOptions): Promise<void> {
 }
 
 function findMatchingPackage(available: Package[], pkg: string): Package {
-  const match = available.find(availablePkg => pkg === availablePkg.name)
+  const match = available.find((availablePkg) => pkg === availablePkg.name)
   if (match) {
     return match
   }
   throw new Error(`Failed to find package "${pkg}"`)
 }
 
-function resolvePackages(available: Package[], packageList?: string[]): Package[] {
+function resolvePackages(
+  available: Package[],
+  packageList?: string[],
+): Package[] {
   if (packageList?.length) {
-    return packageList.map(arg => findMatchingPackage(available, arg))
+    return packageList.map((arg) => findMatchingPackage(available, arg))
   }
   return available
 }
@@ -73,9 +76,11 @@ async function cleanPackages() {
 
   const dirs = await Promise.all([formatPath('dist')].map(exists))
   const packages = (await fg('packages/*/*.(tgz|zip)')).filter(
-    path => !path.match(/\/__/)
+    (path) => !path.match(/\/__/),
   )
-  const dist = (await fg('packages/*/dist')).filter(path => !path.match(/\/__/))
+  const dist = (await fg('packages/*/dist')).filter(
+    (path) => !path.match(/\/__/),
+  )
   const rmlist = [...dirs, ...packages, ...dist].filter(Boolean) as string[]
 
   if (rmlist.length > 0) {
@@ -91,72 +96,59 @@ async function cleanPackages() {
 const argv = await yargs(hideBin(process.argv))
   .help('h')
   .alias('h', 'help')
-  .command(
-    'bundle [packages..]',
-    'bundle packages',
-    (y: Argv) => {
-      return y.positional('packages', {
+  .command('bundle [packages..]', 'bundle packages', (y: Argv) => {
+    return y
+      .positional('packages', {
         describe: 'list of packages',
-      }).option('scope', {
+      })
+      .option('scope', {
         alias: 's',
         describe: 'project scope, like "@foo" or "foo"',
         string: true,
       })
-    },
-  )
-  .command(
-    'run [scope] [pkg]',
-    'run scripts on project scope',
-    (y: Argv) => {
-      return y.positional('scope', {
+  })
+  .command('run [scope] [pkg]', 'run scripts on project scope', (y: Argv) => {
+    return y
+      .positional('scope', {
         describe: 'project scope, like "@foo" or "foo"',
       })
-        .positional('pkg', {
-          describe: 'package name',
-        })
-        .option('all', {
-          alias: 'a',
-          boolean: true,
-          default: false,
-        })
-        .option('script', {
-          alias: 's',
-          default: 'dev',
-          describe: 'run this npm script',
-          string: true,
-        })
-    },
-  )
-  .command(
-    'packages',
-    'work with packages',
-    (y: Argv) => {
-      return y.option('scope', {
+      .positional('pkg', {
+        describe: 'package name',
+      })
+      .option('all', {
+        alias: 'a',
+        boolean: true,
+        default: false,
+      })
+      .option('script', {
+        alias: 's',
+        default: 'dev',
+        describe: 'run this npm script',
+        string: true,
+      })
+  })
+  .command('packages', 'work with packages', (y: Argv) => {
+    return y
+      .option('scope', {
         alias: 's',
         describe: 'filter packages from this scope',
         string: true,
-      }).option('with-script', {
+      })
+      .option('with-script', {
         alias: 'w',
         describe: 'filter scopes supporting this npm script',
         string: true,
       })
-    },
-  )
-  .command(
-    'scopes',
-    'work with project scopes',
-    (y: Argv) => {
-      return y.option('with-script', {
-        alias: 'w',
-        describe: 'filter scopes supporting this npm script',
-        string: true,
-      })
-    },
-  )
+  })
+  .command('scopes', 'work with project scopes', (y: Argv) => {
+    return y.option('with-script', {
+      alias: 'w',
+      describe: 'filter scopes supporting this npm script',
+      string: true,
+    })
+  })
   .command('clean', 'clean artifacts')
-  .demandCommand()
-  .argv
-
+  .demandCommand().argv
 
 const [command] = argv._
 

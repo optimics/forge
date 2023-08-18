@@ -12,7 +12,10 @@ interface CompilerData {
 }
 
 type CompilerCallback = InnerCallback<Error, CompilerData>
-type CompilerHandler = (data: CompilerData, cb: CompilerCallback) => Promise<void>
+type CompilerHandler = (
+  data: CompilerData,
+  cb: CompilerCallback,
+) => Promise<void>
 type TapHandler = (compilation: Compilation) => void
 
 export default class WebsiteProxyPlugin {
@@ -41,7 +44,7 @@ export default class WebsiteProxyPlugin {
     return (compilation: Compilation) => {
       HtmlWebpackPlugin.getHooks(compilation).beforeEmit.tapAsync(
         this.constructor.name,
-        this.getCompilerHandler()
+        this.getCompilerHandler(),
       )
     }
   }
@@ -54,7 +57,7 @@ export default class WebsiteProxyPlugin {
   injectContent(data: CompilerData, html: string): string {
     const compilerRoot = htmlParser.parse(data.html)
     const injectedElements = compilerRoot.querySelectorAll('script,link,style')
-    const injectedContent = injectedElements.map(item => item.toString())
+    const injectedContent = injectedElements.map((item) => item.toString())
     return html + injectedContent
   }
 }

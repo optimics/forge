@@ -1,5 +1,10 @@
 import { log } from './cli.js'
-import { GetPackagesOptions, extractPackageName, getPackageNames, getPackageScopes } from '@optimics/npm'
+import {
+  GetPackagesOptions,
+  extractPackageName,
+  getPackageNames,
+  getPackageScopes,
+} from '@optimics/npm'
 
 export function printScopes(cwd: string, options?: GetPackagesOptions): void {
   getPackageScopes(cwd, options).map((s: string) => log(s))

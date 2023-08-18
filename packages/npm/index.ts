@@ -31,9 +31,7 @@ export function urlToCwd(url: string): string {
 }
 
 function getPrefix(cwd?: string): string {
-  return execSync('npm prefix', { cwd })
-    .toString()
-    .trim()
+  return execSync('npm prefix', { cwd }).toString().trim()
 }
 
 export function getRoot(cwd?: string): string {
@@ -96,12 +94,14 @@ export interface GetPackagesOptions {
 
 type PackageFilter = (p: PackageLike) => boolean
 
-export function createPackageFilter(options: GetPackagesOptions): PackageFilter | null {
+export function createPackageFilter(
+  options: GetPackagesOptions,
+): PackageFilter | null {
   const { scope, startsWith, withScript } = options
   if (!(scope || startsWith || withScript)) {
     return null
   }
-  return function(p: PackageLike) {
+  return function (p: PackageLike) {
     let result = true
     if (scope) {
       const projectScope = padScope(scope)

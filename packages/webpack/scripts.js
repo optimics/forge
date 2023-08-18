@@ -12,7 +12,6 @@ const defaultPort = 3000
 export const readManifest = (packageDir) =>
   JSON.parse(readFileSync(join(packageDir, 'package.json')))
 
-
 let wwp
 
 try {
@@ -117,7 +116,11 @@ export const createDevServer = ({ proxyWebsite, ...webpackEnv }) => {
     if (!wwp) {
       throw new Error('Please install "@optimics/webpack-website-proxy"')
     }
-    if (!webpackConfig.plugins.some(plugin => plugin.constructor.name === 'HtmlWebpackPlugin')) {
+    if (
+      !webpackConfig.plugins.some(
+        (plugin) => plugin.constructor.name === 'HtmlWebpackPlugin',
+      )
+    ) {
       injectPlugins.push(new HtmlWebpackPlugin({}))
     }
     injectPlugins.push(new wwp.default(proxyWebsite))
@@ -125,10 +128,7 @@ export const createDevServer = ({ proxyWebsite, ...webpackEnv }) => {
   const compilerConfig = {
     ...webpackConfig,
     entry: webpackEnv.entryPathDev || webpackEnv.entryPath,
-    plugins: [
-      ...webpackConfig.plugins,
-      ...injectPlugins
-    ].filter(Boolean),
+    plugins: [...webpackConfig.plugins, ...injectPlugins].filter(Boolean),
   }
   const compiler = webpack(compilerConfig)
   const devServerOptions = {
@@ -139,7 +139,14 @@ export const createDevServer = ({ proxyWebsite, ...webpackEnv }) => {
   return new WebpackDevServer(devServerOptions, compiler)
 }
 
-export const configurePackage = ({ defaultPort, devServerOptions, entryPath, env, proxyWebsite, srcDir }) => {
+export const configurePackage = ({
+  defaultPort,
+  devServerOptions,
+  entryPath,
+  env,
+  proxyWebsite,
+  srcDir,
+}) => {
   const getWebpackEnvironment = () => ({
     defaultPort,
     devServerOptions,

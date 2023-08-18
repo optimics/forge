@@ -14,7 +14,11 @@ import { PackageDoesNotExistError, PrivatePackageError } from './errors.js'
 import { resolveFlags } from './flags.js'
 import { ensureDir, ensureUnlink } from './fs.js'
 import { packageProject } from './npm.js'
-import { createPackageFilter, getPackages, readPackageJson } from '@optimics/npm'
+import {
+  createPackageFilter,
+  getPackages,
+  readPackageJson,
+} from '@optimics/npm'
 import {
   copyFileSync,
   createReadStream,
@@ -173,13 +177,9 @@ export class Package {
       )
     }
     try {
-      await execute(
-        'npm',
-        ['show', `${dep.name}@${dep.version}`],
-        {
-          cwd: this.path,
-        },
-      )
+      await execute('npm', ['show', `${dep.name}@${dep.version}`], {
+        cwd: this.path,
+      })
       return dep
     } catch (e) {
       if (e?.code === 1) {
@@ -247,7 +247,9 @@ export class Package {
   }
 
   referenceStoredDependency(dep: Package): void {
-    const versionRef = dep.manifest.private ? `file:isolated-${dep.npmPackageName}` : dep.version
+    const versionRef = dep.manifest.private
+      ? `file:isolated-${dep.npmPackageName}`
+      : dep.version
     if (!this.dependencies) {
       this.dependencies = {}
     }
