@@ -1,6 +1,6 @@
 {
   "name": "@optimics/gtm-template-builder",
-  "version": "0.5.0",
+  "version": "0.8.4",
   "description": "Tools used to build Google Tag Manager Tag Templates",
   "author": "Pavel Žák <pavel@zak.global>",
   "type": "module",
