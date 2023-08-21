@@ -1,0 +1,28 @@
+{
+  "name": "@optimics/gtm-template-builder",
+  "version": "0.5.0",
+  "description": "Tools used to build Google Tag Manager Tag Templates",
+  "author": "Pavel Žák <pavel@zak.global>",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "compile": "tsc"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/optimics/forge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/optimics/forge/issues"
+  },
+  "dependencies": {
+    "yaml": "^2.3.1"
+  }
+}

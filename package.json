@@ -17,6 +17,7 @@
     "@types/node": "^20.3.3",
     "@types/tar": "^6.1.5",
     "@types/tmp": "^0.2.3",
+    "@types/yaml": "^1.9.7",
     "package-json-type": "^1.0.3"
   },
   "workspaces": [
