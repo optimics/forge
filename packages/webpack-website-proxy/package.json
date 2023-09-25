@@ -1,6 +1,6 @@
 {
   "name": "@optimics/webpack-website-proxy",
-  "version": "0.8.0",
+  "version": "0.8.5",
   "description": "Inject your webpack generated bundles inside a live website via proxy and webpack dev server",
   "author": "Pavel Žák <pavel.zak@optimics.cz>",
   "homepage": "https://github.com/optimics/forge#readme",

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.5](https://github.com/optimics/forge/compare/v0.8.4...v0.8.5) (2023-09-25)
+
+
+### Bug Fixes
+
+* pass devServerOptions trough the script ([726398e](https://github.com/optimics/forge/commit/726398e59b82493a569f0e40267cd5f9755f6bb9))
+
+
+
+
+
 ## [0.8.1](https://github.com/optimics/forge/compare/v0.8.0...v0.8.1) (2023-08-09)
 
 
