@@ -184,7 +184,7 @@ export class Package {
     return available.filter((pkg) => required.includes(pkg.name))
   }
 
-  async confirmPublishedVersion(dep: Package): Promise<Package> {
+  async confirmPublishedVersion(dep: Package): Promise<Package | null> {
     if (dep.manifest.private) {
       throw new PrivatePackageError(
         `Cannot install ${dep.name}@${dep.version} because it is private`,
@@ -194,7 +194,7 @@ export class Package {
       await execute('npm', ['show', `${dep.name}@${dep.version}`], {
         cwd: this.path,
       })
-      return dep
+      return null
     } catch (e) {
       if (e?.code === 1) {
         throw PackageDoesNotExistError.fromError(e)
