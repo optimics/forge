@@ -10,7 +10,7 @@
     "dist/**"
   ],
   "scripts": {
-    "compile": "tsc"
+    "build": "tsc"
   },
   "publishConfig": {
     "access": "public"
