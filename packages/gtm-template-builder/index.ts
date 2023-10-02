@@ -112,7 +112,7 @@ export function buildTemplateMetadataContent(
   )
   return serializeMetadataContent({
     documentation: packageJson?.documentation || '',
-    homepage: packageJson?.documentation || '',
+    homepage: packageJson?.homepage || '',
     versions,
   })
 }
