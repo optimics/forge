@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.7](https://github.com/optimics/forge/compare/v0.8.6...v0.8.7) (2023-10-02)
+
+
+### Bug Fixes
+
+* pass homepage ([4d40186](https://github.com/optimics/forge/commit/4d40186486ad8ef423aa222894bfff238aadfcd8))
+
+
+
+
+
 ## [0.8.6](https://github.com/optimics/forge/compare/v0.8.5...v0.8.6) (2023-09-29)
 
 
