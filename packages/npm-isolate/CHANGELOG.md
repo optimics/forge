@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.8](https://github.com/optimics/forge/compare/v0.8.7...v0.8.8) (2023-12-26)
+
+
+### Bug Fixes
+
+* automagically proxy assets trough webpack ([793eafe](https://github.com/optimics/forge/commit/793eafee53de49551b3982ac9ce313d4b64dfe42))
+
+
+
+
+
 ## [0.8.5](https://github.com/optimics/forge/compare/v0.8.4...v0.8.5) (2023-09-25)
 
 
