@@ -161,6 +161,16 @@ export const configurePackage = ({
   })
 
   const build = () => transpileScript(getWebpackEnvironment())
-  const runDevServer = () => createDevServer(getWebpackEnvironment()).start()
+  const runDevServer = async () => {
+    const server = createDevServer(getWebpackEnvironment())
+    await server.start()
+    const proxyPlugin = server.compiler.options.plugins.find(
+      (p) => p instanceof wwp.default,
+    )
+    if (proxyPlugin) {
+      proxyPlugin.proxyAssets(server)
+    }
+    return server
+  }
   return { build, runDevServer }
 }

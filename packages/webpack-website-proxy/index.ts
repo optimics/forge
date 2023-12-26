@@ -1,5 +1,8 @@
+import type { Request, Response } from 'express'
+import { qsm } from 'query-string-manipulator'
 import type { InnerCallback } from 'tapable'
 import type { Compilation, Compiler } from 'webpack'
+import type Server from 'webpack-dev-server'
 
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import fetch from 'node-fetch'
@@ -18,11 +21,56 @@ type CompilerHandler = (
 ) => Promise<void>
 type TapHandler = (compilation: Compilation) => void
 
+const allowedHeaders = [
+  'content-type',
+  'last-modified',
+  'age',
+  'server',
+  'x-served-by',
+]
+
+function isAllowedHeader([name]: [string, string]) {
+  return allowedHeaders.includes(name)
+}
+
+function proxyAsset(proxyWebsite: string) {
+  return function (req: Request, res: Response, next: (_err?: Error) => void) {
+    if (req.path) {
+      const src = new URL(proxyWebsite)
+      const url = qsm(`${src.protocol}//${src.hostname}${req.path}`, {
+        set: req.query,
+      })
+      fetch(url)
+        .then((proxyRes) => {
+          const headers = Object.fromEntries(
+            Array.from(proxyRes.headers).filter(isAllowedHeader),
+          )
+          res.set({
+            ...headers,
+            'access-control-allow-origin': '*',
+          })
+          proxyRes.body?.pipe(res)
+        })
+        .catch((e) => next(e))
+    } else {
+      next()
+    }
+  }
+}
+
+function proxyAssets(server: Server, proxyWebsite: string) {
+  server.app?.use(proxyAsset(proxyWebsite))
+}
+
 export default class WebsiteProxyPlugin {
   websiteUrl: string
 
   constructor(websiteUrl: string) {
     this.websiteUrl = websiteUrl
+  }
+
+  proxyAssets(server: Server) {
+    proxyAssets(server, this.websiteUrl)
   }
 
   apply(compiler: Compiler) {

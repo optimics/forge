@@ -316,12 +316,17 @@ export class Package {
 
   async storeRawPackage(): Promise<void> {
     if (this.flags.storeLocal) {
-      await this.storeDir(this.npmPackageExtractTempPath, this.rawPackagePathLocal)
+      await this.storeDir(
+        this.npmPackageExtractTempPath,
+        this.rawPackagePathLocal,
+      )
     }
     if (this.flags.storeRoot) {
-      await this.storeDir(this.npmPackageExtractTempPath, this.rawPackagePathRoot)
+      await this.storeDir(
+        this.npmPackageExtractTempPath,
+        this.rawPackagePathRoot,
+      )
     }
-
   }
 
   async storeZipPackage(): Promise<void> {
